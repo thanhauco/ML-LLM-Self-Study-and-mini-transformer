@@ -11,6 +11,9 @@ class LinearRegression:
         self.bias = None
 
     def fit(self, X, y):
+        # BUG FIX: Ensure y is flattened to 1D to avoid broadcasting issues
+        y = y.flatten()
+        
         n_samples, n_features = X.shape
         self.weights = np.zeros(n_features)
         self.bias = 0
@@ -32,7 +35,7 @@ class LinearRegression:
 if __name__ == "__main__":
     # Small test case
     X = np.array([[1], [2], [3], [4], [5]])
-    y = np.array([2, 4, 6, 8, 10]) # y = 2x
+    y = np.array([[2], [4], [6], [8], [10]]) # 2D array fix test
 
     model = LinearRegression(learning_rate=0.01, n_iterations=1000)
     model.fit(X, y)
