@@ -1,14 +1,14 @@
 import torch
 import torch.nn as nn
-from src.architectures.attention import SelfAttention
+from src.architectures.multi_head_attention import MultiHeadAttention
 
 class TransformerBlock(nn.Module):
     """
-    A single Transformer layer (Pre-norm variant).
+    A single Transformer layer (Pre-norm variant) using Multi-Head Attention.
     """
-    def __init__(self, d_model, ff_hidden, dropout=0.1):
+    def __init__(self, d_model, n_heads, ff_hidden, dropout=0.1):
         super().__init__()
-        self.attention = SelfAttention(d_model)
+        self.attention = MultiHeadAttention(d_model, n_heads)
         self.norm1 = nn.LayerNorm(d_model)
         self.norm2 = nn.LayerNorm(d_model)
         
@@ -33,10 +33,11 @@ class TransformerBlock(nn.Module):
         return x, weights
 
 if __name__ == "__main__":
-    d_model = 32
-    ff_hidden = 128
-    block = TransformerBlock(d_model, ff_hidden)
+    d_model = 64
+    n_heads = 8
+    ff_hidden = 256
+    block = TransformerBlock(d_model, n_heads, ff_hidden)
     
     x = torch.randn(2, 10, d_model)
     out, weights = block(x)
-    print(f"Block output shape: {out.shape}")
+    print(f"MHA Block output shape: {out.shape}")
