@@ -14,7 +14,7 @@ This project is a structured repository for continuous self-study in machine lea
 - Implemented core ML algorithms (Linear/Logistic Regression) from scratch in Numpy.
 - Built a modular Transformer library in PyTorch (Attention, MHA, TransformerBlock).
 - Developed evaluation frameworks for RAG and LLM-as-a-Judge.
-- Created a `MiniTransformer` for character-level language modeling.
+- Created a `MiniTransformer` with full training loops, tokenization utilities, and text generation support.
 
 ## Status
 
@@ -25,11 +25,12 @@ This project is a structured repository for continuous self-study in machine lea
 
 ## Repository Structure
 
-- `curriculum/`: Formal notes and reading lists for search phase.
+- `curriculum/`: Formal notes and reading lists.
 - `src/`: Core implementation code (Numpy/PyTorch).
 - `notebooks/`: Exploratory Data Analysis and experimentation.
 - `evals/`: Evaluation scripts and datasets (Simulated).
-- `projects/`: Multi-component modules (Mini-Transformer).
+- `projects/`: Multi-component modules.
+  - `mini_transformer/`: Full architecture, training, and inference.
 
 ---
 
