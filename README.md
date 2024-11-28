@@ -1,4 +1,4 @@
-# Independent Learning Trajectory: AI & Machine Learning
+# ML & LLM Basics and Mini Transformer
 
 This project is a structured repository for continuous self-study in machine learning fundamentals, LLM architectures, and evaluation methods.
 
