@@ -34,4 +34,4 @@ This project is a structured repository for continuous self-study in machine lea
 
 ---
 
-_Maintained by Thanh Vu <thanhauco@gmail.com>_
+_Maintained by Thanh Vu_
